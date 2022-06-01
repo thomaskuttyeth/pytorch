@@ -138,8 +138,6 @@ for epoch in range(n_iters):
 print(f'prediction after training: f[5] = {forward(5)}') 
 
 #==========================================================
-
-
 import torch 
 import torch.nn as nn 
 X = torch.tensor([[1],[2],[3],[4]], dtype = torch.float32) 
@@ -152,7 +150,7 @@ output_size =  n_features
 
 class LinearRegression(nn.Module):
     def __init__(self, input_dim, output_dim):
-        super(LinearRegression, self).__init__() 
+        super().__init__() 
         
         self.lin = nn.Linear(input_dim, output_dim) 
         
@@ -164,7 +162,6 @@ model = LinearRegression(input_size, output_size)
 
 learning_rate = 0.01 
 n_iters = 10000 
-
 loss = nn.MSELoss() 
 optimizer = torch.optim.SGD(model.parameters(), lr = learning_rate) 
 
