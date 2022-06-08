@@ -1,0 +1,71 @@
+pytorch learning roadmap
+===============================================
+1. torch tensors
+2. tensor operations 
+3. torch layers 
+4. torch.utils.data.Dataclass and DataLoader
+5. model hypyerparameters 
+6. training loop 
+7. keeping the epoch values for training accuracy and loss visualization 
+8. creating the training and loop with evaluations after each epoch
+9. making predictions for the test data : testing loop
+10 creatng the model architecure 
+11. tabular binary classification problem
+12. tabular multiclassification problem 
+13. tabular regresison problem 
+14. image classification binary 
+15. image classification multiclass 
+16. recurrent neural networks basics (RNN,LSTM,GRU)
+17. time series forcasting using sequental architecure
+18. NLp text classificaiton(binary and multiple)
+19. encoder and decoder 
+20. transformers 
+
+======================================================
+specific steps for classification problem 
+======================================================
+-- create training, testing and target features
+-- convert them into numpy array 
+-- create the DataClass 
+-- define batchsize for train,test and validation 
+-- initialize dataclass for train, test and validation with floatTensor features and longTensor targets. 
+-- create a function for getting the class distribution
+
+-- create the weighted sampler 
+-- define epochs, learning_rate,num_features,num_classes
+-- create train,test and validation loader 
+-- device {cuda,cpu}
+-- create the model architecture class 
+-- intialize the model 
+-- define criterion, optimizer, accuracy metric 
+-- create a dictionary for storing the values (accuracy,loss)
+-- create the training loop 
+	-- loop over each epoch 
+		-- set the loss and accuracy to be zero
+		-- train() start 
+		-- loop over each batch(x,y)
+			-- set the gradients to be zero 
+			-- get the prediction 
+			-- get the training loss 
+			-- get the accuracy
+			-- backward pass 
+			-- update the weights 
+			-- add the each batch loss to the total epoch loss
+
+		# validation after each epoch 
+		-- with torch.no_grad() 
+		-- get the prediction 
+		-- get the validation loss 
+		-- get the validation accuracy 
+		-- add the loss 
+
+		print(epoch train loss, train accuracy, val loss, val acc)
+
+
+
+==================================================
+points to be remembered 
+==================================================
+-- accuracy metric definition 
+-- squeezing the predicitions (set of predictions for each batch)
+-- float and long tensor types
